@@ -1,9 +1,8 @@
-colorscheme solarized-dark-termcolors
 
 set-option global tabstop 4
 
-set-option global terminal_enable_mouse=true
-set-option global terminal_assistant cat
+set-option global ui_options terminal_enable_mouse=true
+set-option global ui_options terminal_assistant=cat
 
 evaluate-commands %sh{
     plugins="$kak_config/plugins"
@@ -19,10 +18,7 @@ plug "andreyorst/base16-gruvbox.kak" theme config %{
     colorscheme base16-gruvbox-dark-soft
 }
 
-# not sure this is working
-#plug "lePerdu/kakboard" %{
-#    hook global WinCreate .* %{ kakboard-enable }
-#}
+colorscheme default
 
 plug "andreyorst/kaktree" config %{
     hook global WinSetOption filetype=kaktree %{
@@ -39,5 +35,4 @@ plug "andreyorst/kaktree" config %{
 	set-option global kaktree_file_icon      '⠀⠀📄'
 	set-option global kaktree_tab_open_file true
 }kaktree-toggle
-
 tmux-repl-vertical
