@@ -5,9 +5,12 @@ set-option global ui_options terminal_enable_mouse=true
 set-option global ui_options terminal_assistant=cat
 
 add-highlighter global/ number-lines -hlcursor 
+add-highlighter global/: show-matching
 
-add-highlighter global/ show-matching
-set-face buffer MatchingChar black,red+b
+hook global WinCreate .* %{
+	set-face global MatchingChar black,red+b
+}
+
 
 evaluate-commands %sh{
     plugins="$kak_config/plugins"
