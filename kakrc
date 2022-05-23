@@ -12,6 +12,10 @@ evaluate-commands %sh{
 	printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
 }
 
+plug "lePerdu/kakboard" %{
+    hook global WinCreate .* %{ kakboard-enable }
+}
+
 plug "andreyorst/plug.kak" noload
 
 plug "andreyorst/base16-gruvbox.kak" theme config %{
@@ -34,5 +38,5 @@ plug "andreyorst/kaktree" config %{
 	set-option global kaktree_dir_icon_close '▸ 📁'
 	set-option global kaktree_file_icon      '⠀⠀📄'
 	set-option global kaktree_tab_open_file true
-}kaktree-toggle
-tmux-repl-vertical
+}
+
